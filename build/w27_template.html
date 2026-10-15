@@ -516,6 +516,7 @@ if(renderer){
    else if(n.startsWith('B527_SIGN')){if(m){m.color=new THREE.Color(0xB08D4A);m.emissive=new THREE.Color(0xB08D4A);m.emissiveIntensity=.5;}}
    else if(n.startsWith('B527_GARDEN')||n.startsWith('HIGH_LINE_DECK')){if(m){m.color=new THREE.Color(0x3B4F38);m.emissive=new THREE.Color(0x3B4F38);m.emissiveIntensity=.35;}}
    else if(n.startsWith('HIGH_LINE')){o.castShadow=true;if(m)m.color=new THREE.Color(0x121212);}
+   else if(n.startsWith('B527_BODY')){o.castShadow=true;o.receiveShadow=true;if(m){m.color=new THREE.Color(0x3A3C40);m.emissive=new THREE.Color(0x3A3C40);m.emissiveIntensity=.25;m.transparent=false;m.opacity=1;}}
    else if(n.startsWith('B527_')){if(m){m.color=new THREE.Color(0x0D1714);m.transparent=false;m.opacity=1;}}
    
    
