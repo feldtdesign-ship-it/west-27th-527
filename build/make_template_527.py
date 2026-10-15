@@ -38,6 +38,8 @@ js = sub(js, [
  ("else if(n.startsWith('B188_')&&(n.includes('IRON')||n.includes('GLASS'))){if(m){m.color=new THREE.Color(0x0A0A0A);m.transparent=false;m.opacity=1;}}", ""),
  ("else if(n.startsWith('B188_')&&n.includes('SHOPGLASS')){if(m){m.color=new THREE.Color(0x0D1714);m.transparent=false;m.opacity=1;}}", ""),
 ])
+# seven sections now: drop the 'back at the door' waypoint so the last section (dark doors) pulls out wide
+js = js.replace(" {p:[DOOR[0]+N[0]*60+30,95,DOOR[2]+N[1]*60+40],t:[DOOR[0],8,DOOR[2]],s:58,o:.42},     // s6 the rent, back at the door\n", "")
 body = open(os.path.join(S, 'w27_body.html')).read()
 open(os.path.join(S, 'w27_template.html'), 'w').write(head + css + '</head><body>\n' + body + js)
 print('template written', len(head + css + body + js) // 1024, 'KB')

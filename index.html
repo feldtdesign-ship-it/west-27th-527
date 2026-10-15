@@ -175,7 +175,7 @@ svg{display:block;width:100%;height:auto}
 <a href="#s4"><span class="lbl">The trains</span><span class="dot"></span></a>
 <a href="#s5"><span class="lbl">The street</span><span class="dot"></span></a>
 <a href="#s6"><span class="lbl">Dark doors</span><span class="dot"></span></a>
-<a href="#s7"><span class="lbl">Open items</span><span class="dot"></span></a></nav>
+</nav>
 <div id="cap"></div>
 <div id="meter" style="display:none"><b id="m-v">0</b></div>
 <main id="dossier">
@@ -264,17 +264,6 @@ svg{display:block;width:100%;height:auto}
 <p style="margin-top:14px">What is open: the galleries at 547 and 537, High Line Nine under the High Line at 507, Marquee at night, Avenues School on Tenth, and from spring 2026 Terminal Warehouse on Eleventh with Convene and Equinox as its first tenants.</p>
 </div></div></section>
 
-<section id="s7" data-cap="Open items / what is drawn from a photograph and a plan, not measured" data-num="">
-<div class="wrap right"><div class="card"><div class="eyebrow">Open items</div>
-<h2>What is <em>still</em> not known</h2>
-<p>Nobody counts the people passing this door.</p>
-<dl class="rows">
-<div class="row"><dt>First</dt><dd><b>The rent, the term, and who pays the fit-out.</b> Centaur offered a tour; the listing says price on request.</dd></div>
-<div class="row"><dt>One room or four</dt><dd>The 2024 restroom permit says the ground floor can be split four ways. Ask whether it already is.</dd></div>
-<div class="row"><dt>Both neighbours</dt><dd>Dates for the demolitions at 515 and 533, and how long the sidewalk sheds stay. Both are multi-year builds.</dd></div>
-<div class="row"><dt>The model</dt><dd>The building outlines and heights are the city's. Jardim's storefront is drawn from a photograph and the architect's plan; the floors above and the garden are a guess.</dd></div>
-<div class="row"><dt>$0</dt><dd>Stand on the sidewalk for an hour at five on a Thursday, when the galleries open, and on a Saturday afternoon when the High Line is full, and count.</dd></div>
-</dl></div></div></section>
 </main>
 
 <div id="divider"><div class="k">Part two</div><h2>The numbers</h2></div>
@@ -360,14 +349,6 @@ svg{display:block;width:100%;height:auto}
   <div class="cams" id="cams"></div>
 </section>
 
-<section>
-  <h2><small>Still to count</small>The one number nobody has given us</h2>
-  <div class="buy">
-    <div class="pick"><span class="k">Free, this week</span><h3>An hour on 27th</h3><div class="cost">$0<small>two sittings</small></div><p class="t">Five on a Thursday, when the galleries open, and a Saturday afternoon when the High Line is full. Count who passes the door. Nobody has.</p></div>
-    <div><span class="k">Free, forward-looking</span><h3>A window counter</h3><div class="cost">$0<small>to $200</small></div><p class="t">Once the keys are in hand. The only true door count.</p></div>
-  </div>
-  <p class="caveat" style="margin-top:22px">Subway figures are entries at 34 St-Hudson Yards and 23 St, 543 and 733 m from the door. Bus figures are boardings plus alightings at the stops named, from automatic passenger counters. Jardim's storefront in the model is drawn from a photograph and the architect's plan, not measured on site; the floors above are a guess. Nobody counts the people passing this door.</p>
-</section>
 
 <p class="src">Sources · <a href="https://data.ny.gov/">MTA subway hourly ridership, complexes 471, 165 and 164, and bus stop-level ridership, data.ny.gov</a> · <a href="https://data.cityofnewyork.us/City-Government/Storefronts-Reported-Vacant-or-Not/92iy-9c3n">DOF Storefront Registry</a> · <a href="https://data.cityofnewyork.us/Transportation/Automated-Traffic-Volume-Counts/7ym2-wayt">NYC DOT Automated Traffic Volume Counts</a> · <a href="https://data.cityofnewyork.us/Public-Safety/Motor-Vehicle-Collisions-Crashes/h9gi-nx95">NYC Motor Vehicle Collisions</a> · NYC Planimetric Database · <a href="https://data.cityofnewyork.us/Recreation/Parks-Properties/enfh-gkve">NYC Parks Properties, the High Line</a> · PLUTO, lot 1006997504 · DOB NOW and DOB complaints, BIN 1090205 · <a href="https://open-meteo.com/">Open-Meteo</a> · <a href="https://webcams.nyctmc.org/">NYC DOT cameras</a> · <a href="https://www.propertyshark.com/cre/commercial-property/us/ny/new-york/527-west-27th-street-532-west-28th-street/">PropertyShark listing, 527 W 27th and 532 W 28th</a> · <a href="https://newyorkyimby.com/2019/03/the-jardim-at-527-west-27th-street-is-almost-complete-in-cheslea.html">New York YIMBY, Jardim, 2019</a> · <a href="https://therealdeal.com/new-york/2026/03/18/former-bungalow-8-nightclub-being-converted-into-housing/">The Real Deal, 515 W 27th, March 2026</a> · <a href="https://therealdeal.com/new-york/2024/12/17/silvera-properties-to-redevelop-former-scores-as-rentals/">The Real Deal, 533 W 27th, December 2024</a> · <a href="https://en.wikipedia.org/wiki/McKittrick_Hotel">McKittrick Hotel</a> · <a href="https://barrypopik.com/blog/club_row_west_27th_street">Club Row, 2006</a></p>
 </main>
@@ -488,7 +469,6 @@ const WP=[
  {p:[DOOR[0]+N[0]*42+14,78,DOOR[2]+N[1]*42-26],t:[DOOR[0],9,DOOR[2]],s:30,o:-.46},    // s3 the tenants, the other way
  {p:[MID[0]+120,520,MID[2]+140],t:[MID[0]*0.6,0,MID[2]*0.6],s:330,o:0},               // s4 the trains, from above
  {p:[10,760,90],t:[0,0,0],s:280,o:0},                                                 // s5 plan of the block
- {p:[DOOR[0]+N[0]*60+30,95,DOOR[2]+N[1]*60+40],t:[DOOR[0],8,DOOR[2]],s:58,o:.42},     // s6 the rent, back at the door
  {p:[420,560,420],t:[0,8,0],s:320,o:0}];                                              // s7 wide, out
 let renderer,scene,cam,ready=false;
 function fail(m){console.warn('3D unavailable:',m);document.body.classList.add('fallback');loadEl.classList.add('done');}
