@@ -279,6 +279,59 @@ def stage_building():
     bm = bmesh.new(); _box(bm, 0, L, garden0, garden1, GF, GF + 2.0 * FT); mesh_from_bm(bm, "B527_GARDEN", "PJ_HLDECK")
     return "building: front {:.1f} ft, depth {:.1f} ft, roof {:.0f} ft, retail {:.1f}-{:.1f} ft from the west corner".format(L / FT, Dp / FT, ROOF / FT, RETAIL_X0 / FT, RETAIL_X1 / FT)
 
+
+# ---------- the interior, from the SBLM plan (listing/IMG_2746.jpeg) ----------
+# Ground: 61'-7" along 27th x 33'-4" deep. A core strip 8'-8" wide across the west end holds the elevator (5'-9" along the street side)
+# and a 22'-6" stair down. The open room is the other ~53 ft. Door to the room in the east pane of the glass; the corten door is the lobby.
+# Cellar: 2,120 sq ft under it, floor 11 ft down, reached by the stair and the elevator. White box: white walls, concrete floor, 12.5 ft ceiling.
+CORE_W = 8.67 * FT; ELEV_D = 5.75 * FT; STAIR_Y0, STAIR_Y1 = 9.0 * FT, 31.5 * FT; ROOM_D = 33.3 * FT; CEIL = 12.5 * FT; CELLAR = -11.0 * FT; T = 0.4 * FT
+def stage_interior():
+    for o in [o for o in bpy.data.objects if o.name.startswith("B527_IN_")]: bpy.data.objects.remove(o, do_unlink=True)
+    X1 = RETAIL_X1
+    # the ground-floor slab already has the room cut out (stage_building). Cellar void + slab between, then the shell.
+    gf = bpy.data.objects.get("SITE_527")
+    bm = bmesh.new(); _box(bm, 0.5 * FT, X1, 0.0, ROOM_D, CELLAR, -1.0 * FT); _cut(gf, mesh_from_bm(bm, "B527_IN_CUT_CELLAR", "PJ_TUNNEL"))
+    bm = bmesh.new(); _box(bm, 0.5 * FT, X1, 0.0, ROOM_D, CELLAR - 0.3, CELLAR); mesh_from_bm(bm, "B527_IN_CELLAR_FLOOR", "PJ_FLOOR")
+    bm = bmesh.new(); _box(bm, 0.5 * FT, X1, -0.02, ROOM_D + 0.02, CEIL, CEIL + 0.3); mesh_from_bm(bm, "B527_IN_CEILING", "PJ_WHITE")
+    bm = bmesh.new()
+    _box(bm, 0.5 * FT, X1, ROOM_D - T, ROOM_D, 0.5 * FT, CEIL)                                      # back wall
+    _box(bm, X1 - T, X1, 0.0, ROOM_D, 0.5 * FT, CEIL)                                               # east party wall
+    _box(bm, GLASS[1], X1 - T, 0.0, T, 0.5 * FT, CEIL)                                              # concrete east of the glass, inside face
+    _box(bm, 0.5 * FT, GLASS[0], 0.0, T, 0.5 * FT, CEIL)                                            # west of the glass, inside face
+    # core strip: wall at x = CORE_W with the lobby opening between the elevator and the stair
+    _box(bm, CORE_W, CORE_W + T, 0.0, ELEV_D + T, 0.5 * FT, CEIL); _box(bm, CORE_W, CORE_W + T, STAIR_Y0 - T, ROOM_D, 0.5 * FT, CEIL)
+    _box(bm, 0.5 * FT, CORE_W + T, ELEV_D, ELEV_D + T, 0.5 * FT, CEIL)                              # elevator back wall
+    _box(bm, 0.5 * FT, CORE_W + T, STAIR_Y0 - T, STAIR_Y0, 0.5 * FT, CEIL)                          # stair front wall
+    _box(bm, CORE_W, CORE_W + T, ELEV_D + T, STAIR_Y0 - T, 7.5 * FT, CEIL)                          # header over the lobby opening
+    # cellar shell
+    _box(bm, 0.5 * FT, X1, ROOM_D - T, ROOM_D, CELLAR, -1.0 * FT); _box(bm, X1 - T, X1, 0.0, ROOM_D, CELLAR, -1.0 * FT)
+    _box(bm, 0.5 * FT, X1, 0.0, T, CELLAR, -1.0 * FT); _box(bm, 0.5 * FT, T + 0.5 * FT, 0.0, ROOM_D, CELLAR, -1.0 * FT)
+    _box(bm, CORE_W, CORE_W + T, 0.0, STAIR_Y1, CELLAR, -1.0 * FT)                                  # core wall continues down
+    mesh_from_bm(bm, "B527_IN_WALLS", "PJ_WHITE")
+    # elevator: a steel box with doors to the lobby and the room
+    bm = bmesh.new(); _box(bm, 0.5 * FT + 0.05, CORE_W - 0.05, 0.1, ELEV_D - 0.05, CELLAR, CEIL); mesh_from_bm(bm, "B527_IN_ELEVATOR", "PJ_STEEL")
+    bm = bmesh.new(); _box(bm, CORE_W - 0.02, CORE_W + T + 0.02, 1.0 * FT, ELEV_D - 1.0 * FT, 0.5 * FT, 7.5 * FT); mesh_from_bm(bm, "B527_IN_ELEV_DOOR", "PJ_IRON")
+    # stair: 18 risers down from the lobby end, 8 ft wide, with a landing
+    bm = bmesh.new(); n = 18; run = (STAIR_Y1 - STAIR_Y0 - 1.5 * FT) / n; rise = (0.5 * FT - CELLAR) / n
+    for k in range(n):
+        y0 = STAIR_Y0 + k * run; _box(bm, 0.5 * FT + 0.1, CORE_W - 0.1, y0, y0 + run + 0.02, CELLAR, 0.5 * FT - (k + 1) * rise + rise)
+    mesh_from_bm(bm, "B527_IN_STAIR", "PJ_CONCRETE_DK")
+    bm = bmesh.new(); _box(bm, CORE_W - 0.12, CORE_W - 0.06, STAIR_Y0, STAIR_Y1, 0.5 * FT, 3.5 * FT); mesh_from_bm(bm, "B527_IN_RAIL", "PJ_IRON")
+    # lights for the inside plates: two rows of ceiling cans as point lights
+    for i, x in enumerate((20, 32, 44, 56)):
+        for j, y in enumerate((9, 24)):
+            ld = bpy.data.lights.new("B527_IN_CAN", 'POINT'); ld.energy = 420; ld.shadow_soft_size = 0.4
+            lo = bpy.data.objects.new("B527_IN_CAN_%d%d" % (i, j), ld); col().objects.link(lo); lo.location = _world(x * FT, y * FT, CEIL - 0.1)
+    return "interior: core {:.1f} ft, room {:.1f} x {:.1f} ft, ceiling {:.1f} ft, cellar floor {:.0f} ft".format(CORE_W / FT, (X1 - CORE_W) / FT, ROOM_D / FT, CEIL / FT, CELLAR / FT)
+
+def interior_view(on, ceiling=True):
+    """Hide the floors above (and, for the plan, the ceiling) so the inside cameras see in."""
+    for n in ("B527_BODY_S", "B527_TRAYS_S", "B527_FINS_S", "B527_BODY_N", "B527_TRAYS_N", "B527_FINS_N", "B527_GARDEN") + (() if ceiling else ("B527_IN_CEILING",)):
+        o = bpy.data.objects.get(n)
+        if o: o.hide_render = on; o.hide_viewport = on
+    c = bpy.data.objects.get("B527_IN_CEILING")
+    if c and ceiling: c.hide_render = False; c.hide_viewport = False
+
 def cam(name, loc, target, lens=24, ortho=None):
     c = bpy.data.objects.get(name)
     if not c:
@@ -332,6 +385,10 @@ def stage_cameras():
     sx, sy, _ = _world(L * 0.6, 0.0, 0.0)
     cam("CAM_527_highline", (hx, hy, HL_DECK + 1.6), (sx, sy, 9.0)); print("highline cam", round(hx, 1), round(hy, 1), len(samples), "samples", flush=True)
     cam("CAM_527_axon_close", _world(mid + 60.0, -95.0, 70.0), _world(mid, 15.0, 8.0), lens=35)
+    cam("CAM_527_in_to_street", _world(50.0 * FT, 31.0 * FT, 1.6), _world(30.0 * FT, 0.0, 1.6))            # from the back corner, looking at the glass
+    cam("CAM_527_in_to_back", _world(GLASS[0] + 3 * FT, 1.5 * FT, 1.6), _world(55.0 * FT, 30.0 * FT, 1.4))   # just inside the glass, looking into the room
+    cam("CAM_527_in_plan", _world(31.0 * FT, 16.7 * FT, 60.0), _world(31.0 * FT, 16.7 * FT, 0.0), ortho=24.0)
+    pc = bpy.data.objects["CAM_527_in_plan"]; pc.rotation_euler[2] = math.atan2(_frame()[1].y, _frame()[1].x)
     engines = [e.identifier for e in bpy.types.RenderSettings.bl_rna.properties['engine'].enum_items]
     for eng in ('BLENDER_EEVEE_NEXT', 'BLENDER_EEVEE', 'BLENDER_WORKBENCH'):
         if eng in engines:
@@ -360,7 +417,7 @@ def render(cam_name, filename):
 
 def export_glb(filename="west_27th_527.glb"):
     for o in bpy.data.objects: o.select_set(False)
-    names = ["CHELSEA_MASSING", "SITE_527", "ROADBED", "SIDEWALK", "MEDIAN", "GROUND", "TREES", "HIGH_LINE", "HIGH_LINE_DECK"] + [o.name for o in bpy.data.objects if o.name.startswith("ST_") or o.name.startswith("B527_")]
+    names = ["CHELSEA_MASSING", "SITE_527", "ROADBED", "SIDEWALK", "MEDIAN", "GROUND", "TREES", "HIGH_LINE", "HIGH_LINE_DECK"] + [o.name for o in bpy.data.objects if o.name.startswith("ST_") or (o.name.startswith("B527_") and o.type == "MESH")]
     for n in names:
         o = bpy.data.objects.get(n)
         if o: o.select_set(True)
@@ -378,7 +435,7 @@ def site_center():
 if __name__ == "__main__" or bpy.app.background:
     bpy.ops.wm.read_factory_settings(use_empty=True)
     log = []
-    for fn in (stage_massing, stage_flat, stage_labels, stage_trees, stage_ground, stage_highline, stage_building, stage_cameras):
+    for fn in (stage_massing, stage_flat, stage_labels, stage_trees, stage_ground, stage_highline, stage_building, stage_interior, stage_cameras):
         log.append(fn()); print(log[-1], flush=True)
     pts = {"site": site_center(), "hudson_yards_7": [round(v, 1) for v in proj(-74.00219, 40.75545)], "st23_ce": [round(v, 1) for v in proj(-73.99814, 40.74575)],
            "highline_28": [round(v, 1) for v in proj(-74.00285, 40.75130)], "highline_26": [round(v, 1) for v in proj(-74.00415, 40.74985)]}
@@ -386,6 +443,14 @@ if __name__ == "__main__" or bpy.app.background:
     for c, fn in (("CAM_PLAN", "map_plan.jpg"), ("CAM_AXON", "map_axon.jpg"), ("CAM_WIDE", "map_wide.jpg"), ("CAM_527_front", "CAM_527_front.jpg"), ("CAM_527_door", "CAM_527_door.jpg"), ("CAM_527_down_27th", "CAM_527_down_27th.jpg"), ("CAM_527_highline", "CAM_527_highline.jpg"), ("CAM_527_axon_close", "CAM_527_axon_close.jpg")):
         try: print(render(c, fn), flush=True)
         except Exception as e: print("render failed", c, e, flush=True)
+    interior_view(True)
+    for c, fn in (("CAM_527_in_to_street", "CAM_527_in_to_street.jpg"), ("CAM_527_in_to_back", "CAM_527_in_to_back.jpg")):
+        try: print(render(c, fn), flush=True)
+        except Exception as e: print("render failed", c, e, flush=True)
+    interior_view(True, ceiling=False)
+    try: print(render("CAM_527_in_plan", "CAM_527_in_plan.jpg"), flush=True)
+    except Exception as e: print("render failed plan", e, flush=True)
+    interior_view(False)
     try: print(export_glb(), flush=True)
     except Exception as e: print("export failed", e, flush=True)
     bpy.ops.wm.save_as_mainfile(filepath=os.path.join(OUT_DIR, "build", "west_27th_527.blend"))
