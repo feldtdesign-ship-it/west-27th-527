@@ -1,0 +1,9 @@
+.DS_Store
+.claude/
+listing/
+build/*.blend1
+build/*.blend2
+build/*_session_backup.blend
+data/pull.log
+data/pull_*.out
+build/*.blend[0-9]

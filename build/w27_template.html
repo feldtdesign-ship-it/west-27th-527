@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Never Opened</title>
+<meta name="description" content="527 West 27th Street: the retail floor of Jardim, Isay Weinfeld's concrete condominium a half block west of the High Line. 61 feet of glass, finished 2019, never let. The building, the space, the block's dark doors, the trains, from public data.">
+<meta name="theme-color" content="#141210">
+<link rel="canonical" href="https://feldtdesign-ship-it.github.io/west-27th-527/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="527 West 27th Street · Never Opened">
+<meta property="og:description" content="527 West 27th Street: the retail floor of Jardim, Isay Weinfeld's concrete condominium a half block west of the High Line. 61 feet of glass, finished 2019, never let. The building, the space, the block's dark doors, the trains, from public data.">
+<meta property="og:url" content="https://feldtdesign-ship-it.github.io/west-27th-527/">
+<meta property="og:image" content="https://feldtdesign-ship-it.github.io/west-27th-527/og.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="527 West 27th Street · Never Opened">
+<meta name="twitter:description" content="527 West 27th Street: the retail floor of Jardim, Isay Weinfeld's concrete condominium a half block west of the High Line. 61 feet of glass, finished 2019, never let. The building, the space, the block's dark doors, the trains, from public data.">
+<meta name="twitter:image" content="https://feldtdesign-ship-it.github.io/west-27th-527/og.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Figtree:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap">
+<style>
+:root{--paper:#141210;--card:#1E1B18;--card2:#262320;--rule:#33302B;--ink:#F3EDE3;--ink-2:#C9C2B6;--muted:#8A857C;--f:#C56BD3;--six:#B933AD;--jz:#B07A3E;--bd:#FF6319;--c:#FCCC0A;--l:#6B6660;--amber:#FCCC0A;--rain:#5A8FC7;--cold:#7FA0C4;--snow:#B9BEC4;--heat:#E2562A;--opsz:72;--w:700;
+ --disp:"Bricolage Grotesque","Arial Narrow",sans-serif;--body:"Figtree",system-ui,-apple-system,sans-serif;--mono:"DM Mono",ui-monospace,Menlo,monospace}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;background:var(--paper)}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.5;overflow-x:hidden}
+#stage{position:fixed;inset:0;z-index:0} #stage canvas{display:block}
+#poster{position:fixed;inset:0;z-index:0;display:none} #poster img{width:100%;height:100%;object-fit:cover}
+body.fallback #poster{display:block} body.fallback #stage{display:none}
+#scrim{position:fixed;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(20,18,16,.94) 0%,rgba(20,18,16,.72) 34%,rgba(20,18,16,.08) 60%,rgba(20,18,16,0) 100%);transition:background .5s}
+#scrim.flip{background:linear-gradient(270deg,rgba(20,18,16,.94) 0%,rgba(20,18,16,.72) 34%,rgba(20,18,16,.08) 60%,rgba(20,18,16,0) 100%)}
+#scrim.top{background:linear-gradient(180deg,rgba(20,18,16,.92) 0%,rgba(20,18,16,.55) 40%,rgba(20,18,16,0) 75%)}
+#bar{position:fixed;left:0;top:0;height:3px;background:var(--f);z-index:6;width:0}
+#load{position:fixed;inset:0;z-index:9;background:var(--paper);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);transition:opacity .6s}
+#load.done{opacity:0;pointer-events:none}
+#load .track{width:200px;height:2px;background:var(--rule)} #load .fill{height:100%;width:0;background:var(--f);transition:width .2s}
+#mast{position:fixed;left:0;right:0;top:0;z-index:5;display:flex;justify-content:space-between;align-items:baseline;padding:16px 24px;font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);pointer-events:none}
+#mast b{color:var(--ink);font-weight:700} #mast a{pointer-events:auto;color:var(--f);text-decoration:none}
+#rail{position:fixed;right:22px;top:50%;transform:translateY(-50%);z-index:5;display:flex;flex-direction:column;gap:12px}
+#rail a{display:flex;align-items:center;gap:9px;text-decoration:none;color:var(--muted);font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;justify-content:flex-end}
+#rail a .dot{width:9px;height:9px;border:1.5px solid var(--muted)}
+#rail a.on{color:var(--f)} #rail a.on .dot{background:var(--f);border-color:var(--f)}
+#rail a .lbl{opacity:0;transition:opacity .2s} #rail a:hover .lbl,#rail a.on .lbl{opacity:1}
+#cap{position:fixed;left:24px;bottom:18px;z-index:5;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);max-width:60vw}
+#meter{position:fixed;right:24px;bottom:18px;z-index:5;font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--f);opacity:0;transition:opacity .4s}
+#meter b{font-family:var(--disp);font-size:34px;font-weight:800;letter-spacing:0;font-variant-numeric:tabular-nums;color:var(--f)}
+#meter.on{opacity:1}
+#num{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);z-index:1;pointer-events:none;font-family:var(--disp);font-weight:800;font-size:min(58vh,44vw);line-height:.8;color:var(--f);opacity:0;transition:opacity .6s,color .6s;font-optical-sizing:none;font-variation-settings:"opsz" var(--opsz),"wght" 800;letter-spacing:-.04em;mix-blend-mode:screen}
+#num.on{opacity:.16}
+main#dossier{position:relative;z-index:2}
+main#dossier section{min-height:100vh;display:flex;align-items:center;padding:80px 24px}
+.wrap{width:min(580px,86vw)} .wrap.right{margin-left:auto}
+.card{background:rgba(30,27,24,.88);backdrop-filter:blur(6px);border-top:3px solid var(--f);padding:26px 28px}
+.card.jz{border-top-color:var(--jz)} .card.bd{border-top-color:var(--bd)} .card.grey{border-top-color:var(--l)}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+h1{font-family:var(--disp);font-weight:700;font-size:clamp(76px,12vw,180px);line-height:.86;letter-spacing:-.02em;margin:0 0 20px;font-optical-sizing:none;font-variation-settings:"opsz" var(--opsz),"wght" var(--w);color:var(--ink);text-wrap:balance}
+h1 em{font-style:normal;font-weight:300;color:var(--f)}
+h2{font-family:var(--disp);font-weight:600;font-size:clamp(42px,6vw,70px);line-height:.94;letter-spacing:-.015em;margin:0 0 14px;font-optical-sizing:none;font-variation-settings:"opsz" var(--opsz),"wght" 600;text-wrap:balance}
+h2 em{font-style:normal;font-weight:300;color:var(--ink-2)}
+.f{color:var(--f)} .jz{color:var(--jz)} .bd{color:var(--bd)} .c{color:var(--c)}
+p{margin:0 0 12px;max-width:54ch} .lede{font-size:19px;color:var(--ink-2)}
+b{font-weight:600;color:var(--ink)}
+.rows{display:flex;flex-direction:column;gap:0;margin:16px 0 0;padding:0;border-top:1px solid var(--rule)}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:9px 0;border-bottom:1px solid var(--rule);font-size:14.5px}
+.row dt{font-family:var(--mono);font-size:12px;color:var(--muted);margin:0} .row dd{margin:0;color:var(--ink-2)}
+.big{font-family:var(--disp);font-weight:700;font-size:clamp(64px,9vw,120px);line-height:.85;letter-spacing:-.02em;font-variant-numeric:tabular-nums;margin:6px 0 8px;font-optical-sizing:none;font-variation-settings:"opsz" var(--opsz),"wght" 700}
+.big small{font-family:var(--body);font-weight:500;font-size:16px;letter-spacing:0;color:var(--ink-2);margin-left:8px}
+.reg{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:14px;font-family:var(--mono)}
+.reg th{font-weight:400;text-align:left;color:var(--muted);font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:6px 8px 6px 0;border-bottom:1px solid var(--rule)}
+.reg td{padding:7px 8px 7px 0;border-bottom:1px solid var(--rule);color:var(--ink-2);vertical-align:top}
+.reg td.v{color:var(--f);font-weight:500} .reg td.q{color:var(--muted)}
+.cta{display:inline-block;margin-top:14px;font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--f);text-decoration:none;border-bottom:1px solid var(--f);padding-bottom:2px}
+footer{position:relative;z-index:3;background:var(--paper);padding:40px 24px 60px;font-family:var(--mono);font-size:12px;color:var(--muted);line-height:1.7}
+footer .wrap{width:min(720px,90vw)}
+/* ---- part two ---- */
+#divider{position:relative;z-index:3;background:var(--paper);padding:120px 24px 40px;text-align:center}
+#divider .k{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+#divider h2{font-size:clamp(56px,9vw,120px);line-height:.9;margin:10px 0 0;letter-spacing:-.02em}
+body.numbers-on #mast,body.numbers-on #rail,body.numbers-on #cap,body.numbers-on #meter,body.numbers-on #num,body.numbers-on #scrim{opacity:0;pointer-events:none;transition:opacity .4s}
+#numbers{position:relative;z-index:3;background:var(--paper);color:var(--ink);margin-top:-1px}
+#numbers main{max-width:1120px;margin:0 auto;padding:22px 24px 90px;display:flex;flex-direction:column;gap:72px}
+#numbers h2{font-size:54px;line-height:.95;margin:0 0 14px}
+#numbers h2 small{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:var(--muted);text-transform:uppercase;margin-bottom:10px;font-weight:400}
+#numbers p{max-width:64ch} #numbers p+p{margin-top:12px}
+#numbers a{color:var(--f)}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--f);outline-offset:3px}
+.mast{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid var(--ink);padding-bottom:12px;font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);flex-wrap:wrap;gap:8px}
+.mast .clock{color:var(--f)}
+.scrub{position:sticky;top:0;z-index:5;background:linear-gradient(var(--paper) 85%,transparent);padding:12px 0 18px;display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:center}
+.scrub .lab{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+.scrub .lab b{color:var(--f);display:block;font-size:22px;letter-spacing:0;text-transform:none;font-family:var(--disp);font-weight:700}
+.scrub input[type=range]{width:100%;accent-color:var(--f);height:28px;cursor:ew-resize}
+.scrub button{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;background:transparent;color:var(--ink-2);border:1px solid var(--rule);padding:8px 12px;cursor:pointer;white-space:nowrap}
+.scrub button.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.scrub .days{display:flex;gap:4px}
+.hero{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:40px;align-items:end}
+.hero .bigN{font-family:var(--disp);font-weight:800;font-size:clamp(110px,19vw,232px);line-height:.82;color:var(--f);font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.hero .unit{font-family:var(--disp);font-style:normal;font-weight:300;font-size:clamp(26px,3.4vw,40px);line-height:1;margin-top:8px}
+.hero .sub{color:var(--ink-2);margin-top:10px;max-width:54ch}
+.doors{display:flex;flex-direction:column;gap:2px;background:var(--rule)}
+.doors div{background:var(--card);padding:18px 20px}
+.doors div.a{border-top:3px solid var(--jz)} .doors div.b{border-top:3px solid var(--l)}
+.doors .k{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.doors .v{font-family:var(--disp);font-weight:800;font-size:64px;line-height:1;margin:8px 0 4px;font-variant-numeric:tabular-nums}
+.doors .a .v{color:var(--jz)} .doors .b .v{color:var(--ink-2)}
+.doors .v span{font-size:18px;font-family:var(--body);font-weight:500;color:var(--ink)}
+.doors .t{font-size:14.5px;color:var(--ink-2)}
+.panel{background:var(--card);border-top:3px solid var(--f);padding:18px}
+svg{display:block;width:100%;height:auto}
+.ax{font-family:var(--mono);font-size:11px;fill:var(--muted)}
+.grid{stroke:var(--rule);stroke-width:1}
+.river .l{fill:var(--f);opacity:.85} .river .a{fill:var(--jz);opacity:.95}
+.river .cur{stroke:var(--ink);stroke-width:1.5;opacity:.7}
+.legend{display:flex;gap:18px;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);margin-top:10px;flex-wrap:wrap}
+.legend i{display:inline-block;width:14px;height:10px;vertical-align:middle;margin-right:6px}
+.legend i.l{background:var(--f)} .legend i.a{background:var(--jz)} .legend i.c{background:var(--l)} .legend i.bd{background:var(--bd)} .legend i.y{background:var(--c)}
+.readout{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-top:10px}
+.readout div{border-top:1px solid var(--rule);padding-top:8px}
+.readout .k{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.readout .v{font-family:var(--disp);font-size:34px;font-weight:800;line-height:1;margin-top:4px;font-variant-numeric:tabular-nums}
+.heat{display:grid;grid-template-columns:44px 1fr;gap:6px 8px;align-items:center;margin-top:18px}
+.heat .row{display:grid;grid-template-columns:repeat(24,1fr);gap:2px;border:0;padding:0}
+.heat .cell{aspect-ratio:1/1.15;background:var(--f);transition:transform .12s}
+.heat .cell:hover{transform:scale(1.35);outline:1px solid var(--ink);z-index:2;position:relative}
+.heat .cell.now{outline:1px solid var(--ink)}
+.heat .d{font-family:var(--mono);font-size:11px;color:var(--ink-2);letter-spacing:.08em}
+.heat .hrs{grid-column:2;display:grid;grid-template-columns:repeat(24,1fr);font-family:var(--mono);font-size:10px;color:var(--muted)}
+.heat .hrs span:nth-child(3n+2),.heat .hrs span:nth-child(3n+3){visibility:hidden}
+.tip{position:fixed;pointer-events:none;background:var(--ink);color:var(--paper);font-family:var(--mono);font-size:12px;padding:6px 9px;z-index:9;white-space:nowrap;display:none}
+.multi .y{fill:none;stroke-width:2} .multi .y.f{stroke:var(--f)} .multi .y.jz{stroke:var(--jz)} .multi .y.bd{stroke:var(--bd)} .multi .y.c{stroke:var(--c)}
+.multi .ylab{font-family:var(--disp);font-weight:700;font-size:15px} .multi .ylab.f{fill:var(--f)} .multi .ylab.jz{fill:var(--jz)} .multi .ylab.bd{fill:var(--bd)} .multi .ylab.c{fill:var(--c)}
+.wx .dot{fill:var(--ink-2);opacity:.45;transition:opacity .2s,fill .2s}
+.wx.mode-rain .dot.rain{fill:var(--rain);opacity:1} .wx.mode-snow .dot.snow{fill:var(--snow);opacity:1} .wx.mode-cold .dot.cold{fill:var(--cold);opacity:1} .wx.mode-hot .dot.hot{fill:var(--heat);opacity:1}
+.wx.mode-rain .dot:not(.rain),.wx.mode-snow .dot:not(.snow),.wx.mode-cold .dot:not(.cold),.wx.mode-hot .dot:not(.hot){opacity:.12}
+.modes{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.modes button{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;background:transparent;color:var(--ink-2);border:1px solid var(--rule);padding:7px 12px;cursor:pointer}
+.modes button.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.finding{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:baseline;margin-top:12px;border-top:1px solid var(--rule);padding-top:10px}
+.finding .v{font-family:var(--disp);font-size:56px;font-weight:800;line-height:1;color:var(--f);font-variant-numeric:tabular-nums;min-width:120px}
+.finding .t{color:var(--ink-2)}
+.cmp{display:flex;flex-direction:column;gap:2px;background:var(--rule);margin-top:18px}
+.cmp div{background:var(--card);padding:14px 18px;display:grid;grid-template-columns:190px 1fr;gap:12px;align-items:baseline;color:var(--ink-2)}
+.cmp .k{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.bars{display:grid;grid-template-columns:repeat(24,1fr);gap:2px;align-items:end;height:90px;margin-top:14px}
+.bars i{display:block;background:var(--l);min-height:2px}
+.bars i.now{background:var(--f)}
+.cams{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:18px}
+.cams .c img{width:100%;aspect-ratio:352/240;object-fit:cover;display:block;border:1px solid var(--rule);background:#000}
+.cams .cap{font-family:var(--mono);font-size:12px;color:var(--ink-2);line-height:1.45;margin-top:8px}
+.cams .cap b{color:var(--ink);font-weight:700}
+.buy{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2px;background:var(--rule);margin-top:18px}
+.buy div{background:var(--card);padding:20px} .buy div.pick{border-top:3px solid var(--f)}
+.buy .k{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.buy h3{font-family:var(--disp);font-size:30px;font-weight:600;margin:8px 0 4px;line-height:1}
+.buy .cost{font-family:var(--disp);font-size:44px;font-weight:800;line-height:1;color:var(--f);margin:8px 0 4px}
+.buy .cost small{font-size:16px;font-family:var(--body);font-weight:500;color:var(--ink);margin-left:4px}
+.buy .t{font-size:14.5px;color:var(--ink-2);line-height:1.45}
+.caveat{border-left:3px solid var(--f);padding:4px 0 4px 16px;color:var(--ink-2);font-size:15.5px}
+.src{font-family:var(--mono);font-size:12px;color:var(--muted);line-height:1.8;border-top:1px solid var(--rule);padding-top:14px}
+.src a{color:var(--ink-2)}
+.mapwrap{background:var(--card);border:1px solid var(--rule);padding:12px;margin-top:18px}
+@media (max-width:760px){#rail{display:none}#scrim,#scrim.flip{background:linear-gradient(0deg,rgba(20,18,16,.94) 12%,rgba(20,18,16,.5) 62%,rgba(20,18,16,.15))}#cap{max-width:70vw;font-size:10px}.wrap.right{margin-left:0}#num{font-size:44vw}.hero{grid-template-columns:1fr}.scrub{grid-template-columns:1fr}.cmp div{grid-template-columns:1fr}#numbers h2{font-size:40px}.row{grid-template-columns:110px 1fr}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}#num,#meter,#scrim{transition:none}*{transition:none!important}}
+</style></head><body>
+<div id="load"><div>Loading West 27th Street</div><div class="track"><div class="fill" id="fill"></div></div></div>
+<div id="stage"></div>
+<div id="poster"><img src="frames/map_axon_web.jpg" alt="Axonometric of the blocks around 527 West 27th Street"></div>
+<div id="scrim"></div><div id="bar"></div>
+<div id="num">527</div>
+<div id="mast"><div><b>527 WEST 27TH STREET</b> &nbsp;/&nbsp; the Jardim retail, west of the High Line</div><div><a href="#numbers">The numbers ↓</a></div></div>
+<nav id="rail">
+<a href="#s0"><span class="lbl">The block</span><span class="dot"></span></a>
+<a href="#s1"><span class="lbl">The building</span><span class="dot"></span></a>
+<a href="#s2"><span class="lbl">The space</span><span class="dot"></span></a>
+<a href="#s3"><span class="lbl">Next door</span><span class="dot"></span></a>
+<a href="#s4"><span class="lbl">The trains</span><span class="dot"></span></a>
+<a href="#s5"><span class="lbl">The street</span><span class="dot"></span></a>
+<a href="#s6"><span class="lbl">Dark doors</span><span class="dot"></span></a>
+<a href="#s7"><span class="lbl">Open items</span><span class="dot"></span></a></nav>
+<div id="cap"></div>
+<div id="meter" style="display:none"><b id="m-v">0</b></div>
+<main id="dossier">
+<section id="s0" data-cap="__NBLDG__ buildings / NYC footprints at recorded roof heights / the High Line from the Parks outline / __NTREES__ street trees" data-num="">
+<div class="wrap"><div class="eyebrow">Platform's Edge / Location Study / Draft</div>
+<h1>Never<br><em>opened</em></h1>
+<p class="lede">527 West 27th Street: the retail floor of Jardim, Isay Weinfeld's concrete condominium between Tenth and Eleventh Avenues, a half block west of the High Line. 61 feet of frontage, 33 feet deep, 2,410 square feet and a cellar, with an elevator. Finished in 2019. Never let. Every building here is real, at its recorded height; the green ribbon is the High Line.</p>
+<p style="font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.1em;text-transform:uppercase">Scroll.</p></div></section>
+
+<section id="s1" data-cap="BBL 1006997504 / BIN 1090205 / finished 2019 / 11 storeys / 135 ft / C6-3, Special West Chelsea District" data-num="527" data-numc="f">
+<div class="wrap right"><div class="card"><div class="eyebrow">The building</div>
+<h2><span class="f">Jardim</span> <em>/ 527 West 27th</em></h2>
+<p>Two buildings on one lot that runs through from 27th to 28th, with a garden between them and a car tunnel under it. Isay Weinfeld's first building in New York. Centaur Properties and Greyscale bought the site in 2014 for $45 million; the Crobar and Pink Elephant nightclubs stood here. Topped out 2017, finished 2019.</p>
+<dl class="rows">
+<div class="row"><dt>Footprint</dt><dd><b>100 ft on 27th × 197.5 ft deep</b>, through-block, roof 135 ft · city building outline</dd></div>
+<div class="row"><dt>On record</dt><dd>83,114 sq ft · 36 condominiums · <b>retail 9,557 sq ft</b> in two units, one on each street · class RM · C6-3, Special West Chelsea District, no historic district</dd></div>
+<div class="row"><dt>Ground floor, 27th</dt><dd>From the west: a corten service door, <b>the retail glass</b>, bare concrete with the brass script, the tunnel, the 527 pier</dd></div>
+<div class="row"><dt>Upstairs</dt><dd>Apartments trade at $3 million to $18 million; the penthouse sold for $17,995,000 in June 2024</dd></div>
+<div class="row"><dt>Owner's offer</dt><dd>Centaur Properties, by email, 14 October 2026: "brand new, white box", tour offered. Rent not stated.</dd></div>
+</dl></div></div></section>
+
+<section id="s2" data-cap="The space / 61 ft 7 in on 27th × 33 ft 4 in deep / 2,410 sq ft ground, 2,120 cellar / SBLM plan" data-num="61" data-numc="f">
+<div class="wrap"><div class="card"><div class="eyebrow">The space</div>
+<div class="big f">2,410<small>sq ft on the ground, from the architect's plan. 2,120 more in the cellar.</small></div>
+<h2>Wide and <em>shallow</em></h2>
+<p>A room 61 feet 7 inches along the street and 33 feet 4 inches deep, with the elevator and a stair at one end. About 32 feet of it is glass, three panes in a dark bronze frame, with a "retail space for lease" sign in the first pane. White box. Ceilings 12 to 13 feet. The storefront panels are said to slide open.</p>
+<dl class="rows">
+<div class="row"><dt>Frontage</dt><dd><b>61 ft 7 in</b> on 27th Street, of which about 32 ft is glass · SBLM Architects plan, read against a photograph</dd></div>
+<div class="row"><dt>Depth</dt><dd><b>33 ft 4 in</b> · the elevator, 5 ft 9 in × 8 ft 8 in, and a stair to the cellar at the end of the room</dd></div>
+<div class="row"><dt>Cellar</dt><dd>2,120 sq ft, 46 × 33 ft, by elevator and stair</dd></div>
+<div class="row"><dt>Four units?</dt><dd>A December 2024 permit added <b>four restrooms</b> "on the 1st floor retail spaces". The owner is ready to cut it up.</dd></div>
+<div class="row"><dt>Listed</dt><dd>Newmark, refreshed May 2026: 2,410 ground + 2,210 lower, divisible, immediate, <b>price on request</b>. Before that Kassin Sabbagh, as four spaces totalling 9,329 sq ft with the 28th Street unit.</dd></div>
+<div class="row"><dt>Empty since</dt><dd>The owner's own city filings: <b>vacant on 31 December 2023, 2024 and 2025</b>. No business has ever been licensed, inspected or permitted at the address.</dd></div>
+</dl></div></div></section>
+
+<section id="s3" data-cap="Next door / 515 to be demolished / 533 to be demolished / High Line Nine / 547 W 27th, two dozen galleries" data-num="" data-numc="jz">
+<div class="wrap right"><div class="card jz"><div class="eyebrow">Next door</div>
+<h2>Towers on <em>both sides</em></h2>
+<dl class="rows">
+<div class="row"><dt>East, 515</dt><dd>Bungalow 8, dark since 2009. In March 2026 Oxford Assets filed a <b>16-storey, 62-apartment tower</b>; the one-storey club is to come down. No date.</dd></div>
+<div class="row"><dt>East, 519 to 521</dt><dd>The curved stainless storefront with the two rounded bays. One-storey former club boxes, for sale with 509 and 514 W 28th as a 15,824 sq ft portfolio.</dd></div>
+<div class="row"><dt>West, 533</dt><dd>Scores, sold by Extell to Silvera for $24.5 million in 2023. <b>12-storey, 60-unit rental filed December 2024; full demolition filed September 2025.</b> Two doors away.</dd></div>
+<div class="row"><dt>West, 537 and 547</dt><dd>Morgan Presents gallery at 537. The Landmark Arts Building at 547, about two dozen galleries, open Tuesday or Wednesday to Saturday, 11 to 6.</dd></div>
+<div class="row"><dt>Across</dt><dd>Hotel Americano at 518, run as Selina, listed closed. The McKittrick at 530, Sleep No More, <b>closed January 2025</b>. Home and Guest House at 532 to 542, closed. Marquee on the Tenth Avenue corner, open Wednesday, Friday and Saturday nights.</dd></div>
+<div class="row"><dt>Behind, on 28th</dt><dd>520 West 28th, the Zaha Hadid building. Jardim's own 28th Street unit, 78 ft of frontage, also for lease.</dd></div>
+</dl></div></div></section>
+
+<section id="s4" data-cap="34 St-Hudson Yards, 7, 543 m / 23 St, C E, 733 m / 34 St-Penn Station, A C E, 857 m" data-num="7" data-numc="six">
+<div class="wrap"><div class="card"><div class="eyebrow">The trains</div>
+<div class="big f">__SUBPEAK__<small>an hour, __SUBPEAKHR__</small></div>
+<h2>No station <em>inside 500 m</em></h2>
+<p>About <b>__SUBDAY__</b> people enter Hudson Yards and 23rd Street on a summer weekday. The nearest stairs are the 7 at Hudson Yards, 543 m, an eight-minute walk. The High Line's own stairs at 26th and 28th are a half block each way.</p>
+<dl class="rows">
+<div class="row"><dt>34 St-Hudson Yards · 7</dt><dd><b>543 m</b> · __S471__ a weekday · __R471__ percent of January 2020</dd></div>
+<div class="row"><dt>23 St · C E</dt><dd><b>733 m</b> · __S165__ a weekday · __R165__ percent of January 2020</dd></div>
+<div class="row"><dt>34 St-Penn Station · A C E</dt><dd>857 m · __S164__ a weekday · __R164__ percent</dd></div>
+<div class="row"><dt>The High Line</dt><dd>Stairs at 26th and 28th Streets, no lift. About eight million visitors a year before 2020; no official count since.</dd></div>
+</dl>
+<a class="cta" href="#numbers">Hour by hour, the week, the years since 2020 ↓</a></div></div></section>
+
+<section id="s5" data-cap="Plan / 250 m around the door / DOF storefront registry, 2024 reporting year" data-num="">
+<div class="wrap right"><div class="card grey"><div class="eyebrow">The street</div>
+<h2>__VACPCT__ percent <em>dark</em></h2>
+<p>Within 250 m, in the 2024 reporting year, <b>__VACN__ of __VACT__</b> storefronts were filed vacant on December 31. The Comptroller's June 2026 report has the city at 11.0 percent. Most lots on this block have never filed at all.</p>
+<dl class="rows">
+<div class="row"><dt>The street</dt><dd>One way west, parked both sides, box trucks. Mid-rise glass and concrete on the north side, old brick lofts and garages across. Sidewalk sheds coming at 527, 515 and 533.</dd></div>
+<div class="row"><dt>Cars</dt><dd>Nobody has counted 27th. Eleventh Avenue northbound at 23rd carried <b>__CARS__ a day</b> in 2019. Four blocks south.</dd></div>
+<div class="row"><dt>Bus</dt><dd>M11 at Tenth and 27th, 135 m · M12 on Eleventh at 26th and 29th · M23 on 23rd. About __BUSDAY__ riders a day at the stops inside 300 m.</dd></div>
+<div class="row"><dt>Citi Bike</dt><dd>Tenth and 28th, 149 m, 69 docks · Eleventh and 27th, 154 m · 26th and Tenth, 159 m · 30th and Tenth, 198 m</dd></div>
+<div class="row"><dt>Crashes</dt><dd><b>__CRASH__</b> within 150 m since 2023 · __HURT__ hurt · __PED__ on foot · __CYC__ on bikes · __KILLED__</dd></div>
+</dl></div></div></section>
+
+<section id="s6" data-cap="Dark doors on the block / owner filings, press and permits, October 2026" data-num="8" data-numc="f">
+<div class="wrap"><div class="card"><div class="eyebrow">Dark doors</div>
+<h2>Club Row, <em>after the clubs</em></h2>
+<p>Twenty years ago this block was Bungalow 8, Cain, Home, Guest House, Spirit, B.E.D., Pink Elephant and Scores, ten thousand people a night. Today the only one open is Marquee on the corner. The rest are waiting to be demolished.</p>
+<table class="reg"><tr><th>Door</th><th>Status, October 2026</th></tr>
+<tr><td class="v">527 W 27th</td><td class="v">Jardim retail. Never let. Filed vacant 2023, 2024, 2025.</td></tr>
+<tr><td>515 W 27th</td><td>Bungalow 8. Vacant; 16-storey tower filed March 2026.</td></tr>
+<tr><td>533 W 27th</td><td>Scores. Vacant; demolition filed September 2025, 12 storeys to come.</td></tr>
+<tr><td>530 W 27th</td><td>McKittrick Hotel, Sleep No More. Closed 12 January 2025. Nothing announced.</td></tr>
+<tr><td>532 to 542 W 27th</td><td>Home, Guest House. Closed. One owner, no filed plan.</td></tr>
+<tr><td>518 W 27th</td><td>Hotel Americano, then Selina. Listed closed; not verified.</td></tr>
+<tr><td>509 W 28th</td><td>Owner filed vacant 2021 to 2024.</td></tr>
+<tr><td>540 W 28th</td><td>Ground-floor gallery space, 2,630 sq ft, listed about a year at $21,917 a month.</td></tr></table>
+<p style="margin-top:14px">What is open: the galleries at 547 and 537, High Line Nine under the High Line at 507, Marquee at night, Avenues School on Tenth, and from spring 2026 Terminal Warehouse on Eleventh with Convene and Equinox as its first tenants.</p>
+</div></div></section>
+
+<section id="s7" data-cap="Open items / what is drawn from a photograph and a plan, not measured" data-num="">
+<div class="wrap right"><div class="card"><div class="eyebrow">Open items</div>
+<h2>What is <em>still</em> not known</h2>
+<p>Nobody counts the people passing this door. In order of cost:</p>
+<dl class="rows">
+<div class="row"><dt>First</dt><dd><b>The rent, the term, and who pays the fit-out.</b> Centaur offered a tour; the listing says price on request.</dd></div>
+<div class="row"><dt>One room or four</dt><dd>The 2024 restroom permit says the ground floor can be split four ways. Ask whether it already is.</dd></div>
+<div class="row"><dt>Both neighbours</dt><dd>Dates for the demolitions at 515 and 533, and how long the sidewalk sheds stay. Both are multi-year builds.</dd></div>
+<div class="row"><dt>The model</dt><dd>The building outlines and heights are the city's. Jardim's storefront is drawn from a photograph and the architect's plan; the floors above and the garden are a guess.</dd></div>
+<div class="row"><dt>$0</dt><dd>Stand on the sidewalk for an hour at five on a Thursday, when the galleries open, and on a Saturday afternoon when the High Line is full, and count.</dd></div>
+<div class="row"><dt>$99 to $299 a month</dt><dd>One paid month of Placer.ai for the address. Prices are third-party listings.</dd></div>
+</dl></div></div></section>
+</main>
+
+<div id="divider"><div class="k">Part two</div><h2>The numbers</h2></div>
+<div id="numbers">
+<main>
+<div class="mast"><span><a href="#s0" style="color:var(--ink-2);text-decoration:none">↑ Dossier</a> &nbsp;·&nbsp; 527 West 27th Street · the Jardim retail · no station inside 500 m</span><span class="clock" id="clock">--:-- NYC</span></div>
+
+<div class="scrub">
+  <div class="lab">Hour <b id="hr-lab">5:00 pm</b></div>
+  <input type="range" id="hr" autocomplete="off" min="0" max="23.9" step="0.1" value="17" aria-label="Hour of day">
+  <div class="days"><button data-d="wk" class="on">Weekday</button><button data-d="sa">Sat</button><button data-d="su">Sun</button><button id="live">Live</button></div>
+</div>
+
+<section class="hero">
+  <div>
+    <div class="eyebrow" id="hero-eye">Typical weekday at this hour · the pump</div>
+    <div class="bigN" id="big">0</div>
+    <div class="unit">people an hour through Hudson Yards and 23rd Street</div>
+    <p class="sub" id="sub">Loading.</p>
+  </div>
+  <div class="doors">
+    <div class="a"><span class="k">Bus inside 300 m · M11 and M12</span><div class="v"><span id="d-a">–</span><span> riders an hour</span></div><div class="t">Boardings and alightings at the stops on Tenth Avenue at 25th, 27th and 30th, and Eleventh at 26th and 29th. True scale, which is why it is small.</div></div>
+    <div class="b"><span class="k">Cars on Eleventh · four blocks south</span><div class="v"><span id="d-c">–</span><span> vehicles an hour</span></div><div class="t">Northbound at 23rd Street, DOT counter, 2019. The nearest avenue the city has counted. 27th Street has never been counted.</div></div>
+  </div>
+</section>
+
+<section>
+  <h2><small>The block</small>The door, the High Line, the stations</h2>
+  <p>The block as the city has it surveyed, then the transit that feeds it.</p>
+  <figure style="margin:18px 0 0"><img src="frames/map_plan_web.jpg" alt="Plan of the blocks around 527 West 27th Street, every building at its recorded roof height" style="width:100%;display:block;border:1px solid var(--rule)"><figcaption class="eyebrow" style="margin-top:8px">Built from the city's own layers: __NBLDG__ buildings at their recorded roof heights, roadbed, sidewalks, medians, the High Line from the Parks outline and __NTREES__ street trees. Jardim in its concrete. Rendered in Blender from the same build as the other dossiers.</figcaption></figure>
+  <figure style="margin:18px 0 0"><img src="frames/CAM_527_front_web.jpg" alt="The model from across 27th Street, square on the Jardim storefront" style="width:100%;display:block;border:1px solid var(--rule)"><figcaption class="eyebrow" style="margin-top:8px">From across 27th Street: the corten door, the three panes of glass, the concrete above. Drawn from a photograph and the architect's plan.</figcaption></figure>
+  <figure style="margin:18px 0 0"><img src="frames/CAM_527_highline_web.jpg" alt="The model from the High Line deck where it crosses 27th Street, looking west down the block" style="width:100%;display:block;border:1px solid var(--rule)"><figcaption class="eyebrow" style="margin-top:8px">From the High Line deck where it crosses 27th, looking west. Jardim is the tray building on the right. The stairs down are at 26th and 28th.</figcaption></figure>
+</section>
+
+<section>
+  <h2><small>The day</small>An evening street</h2>
+  <p>Stacked by the hour: entries at the two stations and bus riders at the stops inside 300 m, drawn at true scale. The line follows the scrubber. Cars on Eleventh Avenue are below on their own scale.</p>
+  <div class="panel" style="margin-top:18px"><svg id="river" viewBox="0 0 1040 320" class="river"></svg>
+    <div class="legend"><span><i class="l"></i>Subway entries, two stations</span><span><i class="a"></i>Bus inside 300 m</span></div>
+    <div class="readout"><div><span class="k">Subway entries /hr</span><div class="v" id="r-l" style="color:var(--f)">–</div></div><div><span class="k">Bus /hr</span><div class="v" id="r-a" style="color:var(--jz)">–</div></div><div><span class="k">Cars on Eleventh /hr</span><div class="v" id="r-c" style="color:var(--ink-2)">–</div></div><div><span class="k">Hour</span><div class="v" id="r-hr" style="font-size:22px;color:var(--ink-2)">–</div></div></div>
+    <div class="bars" id="bars" aria-label="Vehicles per hour on Eleventh Avenue"></div>
+    <div class="legend"><span><i class="c"></i>Vehicles an hour, Eleventh Ave northbound at 23rd Street, 2019</span></div>
+  </div>
+</section>
+
+<section>
+  <h2><small>The week</small>168 hours around the door</h2>
+  <p>Entries at Hudson Yards and 23rd Street together, by hour and weekday, summer 2026. Brighter is busier. Click a cell to set the scrubber.</p>
+  <div class="heat" id="heat"></div>
+</section>
+
+<section>
+  <h2><small>The years</small>Since the shutdown</h2>
+  <p>Monthly entries at each of the three stations, January 2020 to August 2026. Hudson Yards is at __R471__ percent of where it started, 23rd Street at __R165__. The two nearest together are at __RATIO__ percent.</p>
+  <div class="panel multi" style="margin-top:18px"><svg id="multi" viewBox="0 0 1040 340"></svg><div class="legend"><span><i class="l"></i>34 St-Hudson Yards, 7</span><span><i class="y"></i>23 St, C E</span><span><i class="a"></i>34 St-Penn Station, A C E</span></div></div>
+</section>
+
+<section>
+  <h2><small>Weather</small>Does rain empty the stations?</h2>
+  <p>One dot per day of entries at the two stations since January 2025. Pick a condition to light those days and see the gap.</p>
+  <div class="panel wx" id="wx" style="margin-top:18px">
+    <div class="modes"><button data-mode="rain">Rain, over 0.25 in</button><button data-mode="snow">Snow days</button><button data-mode="cold">High under 35 F</button><button data-mode="hot">High over 90 F</button><button data-mode="none">Clear</button></div>
+    <svg id="wxsvg" viewBox="0 0 1040 300"></svg>
+    <div class="finding"><div class="v" id="f-v">–</div><div class="t" id="f-t">Choose a condition.</div></div>
+  </div>
+</section>
+
+<section>
+  <h2><small>Measured</small>What the city has counted near this door</h2>
+  <p>Very little. No traffic counter has been put on 27th Street, and nobody counts the sidewalk.</p>
+  <div class="cmp">
+    <div><span class="k">Frontage</span><span><b>61 ft 7 in</b> on 27th Street, about 32 ft of it glass</span></div>
+    <div><span class="k">Vehicles</span><span><b>__CARS__ a day</b> northbound on Eleventh at 23rd, 2019, DOT counter, peak __CARPEAK__ an hour</span></div>
+    <div><span class="k">Bus a month</span><span><b>__BUSMO__</b> boardings and alightings at the stops inside 300 m, last twelve full months</span></div>
+    <div><span class="k">Crashes within 150 m since 2023</span><span>__CRASH__ · __HURT__ hurt · __PED__ on foot · __CYC__ on bikes · __KILLED__</span></div>
+    <div><span class="k">Who rides here</span><span id="fare">–</span></div>
+  </div>
+</section>
+
+<section>
+  <h2><small>Cameras</small>The nearest public cameras</h2>
+  <p>The city's traffic cameras nearest the door. Frames pulled __CAMTIME__.</p>
+  <div class="cams" id="cams"></div>
+</section>
+
+<section>
+  <h2><small>Still to buy</small>The one number nobody has given us</h2>
+  <div class="buy">
+    <div class="pick"><span class="k">Recommended</span><h3>Placer.ai, this address</h3><div class="cost">$99<small>to $299 a month</small></div><p class="t">Monthly visits to the address back several years, dwell and origin, in one paid month. Placer does not publish prices; these are third-party listings.</p></div>
+    <div><span class="k">Free, this week</span><h3>An hour on 27th</h3><div class="cost">$0<small>two sittings</small></div><p class="t">Five on a Thursday, when the galleries open, and a Saturday afternoon when the High Line is full. Count who passes the door. Nobody has.</p></div>
+    <div><span class="k">Free, forward-looking</span><h3>A window counter</h3><div class="cost">$0<small>to $200</small></div><p class="t">Once the keys are in hand. The only true door count.</p></div>
+  </div>
+  <p class="caveat" style="margin-top:22px">Subway figures are entries at 34 St-Hudson Yards and 23 St, 543 and 733 m from the door. Bus figures are boardings plus alightings at the stops named, from automatic passenger counters. Jardim's storefront in the model is drawn from a photograph and the architect's plan, not measured on site; the floors above are a guess. Nobody counts the people passing this door.</p>
+</section>
+
+<p class="src">Sources · <a href="https://data.ny.gov/">MTA subway hourly ridership, complexes 471, 165 and 164, and bus stop-level ridership, data.ny.gov</a> · <a href="https://data.cityofnewyork.us/City-Government/Storefronts-Reported-Vacant-or-Not/92iy-9c3n">DOF Storefront Registry</a> · <a href="https://data.cityofnewyork.us/Transportation/Automated-Traffic-Volume-Counts/7ym2-wayt">NYC DOT Automated Traffic Volume Counts</a> · <a href="https://data.cityofnewyork.us/Public-Safety/Motor-Vehicle-Collisions-Crashes/h9gi-nx95">NYC Motor Vehicle Collisions</a> · NYC Planimetric Database · <a href="https://data.cityofnewyork.us/Recreation/Parks-Properties/enfh-gkve">NYC Parks Properties, the High Line</a> · PLUTO, lot 1006997504 · DOB NOW and DOB complaints, BIN 1090205 · <a href="https://open-meteo.com/">Open-Meteo</a> · <a href="https://webcams.nyctmc.org/">NYC DOT cameras</a> · <a href="https://www.propertyshark.com/cre/commercial-property/us/ny/new-york/527-west-27th-street-532-west-28th-street/">PropertyShark listing, 527 W 27th and 532 W 28th</a> · <a href="https://newyorkyimby.com/2019/03/the-jardim-at-527-west-27th-street-is-almost-complete-in-cheslea.html">New York YIMBY, Jardim, 2019</a> · <a href="https://therealdeal.com/new-york/2026/03/18/former-bungalow-8-nightclub-being-converted-into-housing/">The Real Deal, 515 W 27th, March 2026</a> · <a href="https://therealdeal.com/new-york/2024/12/17/silvera-properties-to-redevelop-former-scores-as-rentals/">The Real Deal, 533 W 27th, December 2024</a> · <a href="https://en.wikipedia.org/wiki/McKittrick_Hotel">McKittrick Hotel</a> · <a href="https://barrypopik.com/blog/club_row_west_27th_street">Club Row, 2006</a></p>
+</main>
+<div class="tip" id="tip"></div>
+</div>
+<footer><div class="wrap"><p>Model built from NYC Open Data: building footprints with recorded roof heights, planimetric roadbed, sidewalk and median polygons, street centerline names, the Parks outline of the High Line, and the 2015 street tree census. Lot matched by BBL. Jardim's storefront is drawn from a photograph and the architect's plan. Transit figures are MTA hourly ridership and bus stop-level counts, summer 2026. Vehicle counts are NYC DOT, 2019. Draft. Not an offer. Gathered __TODAY__.</p></div></footer>
+<script>
+const D = __DATA__;
+const $ = id => document.getElementById(id);
+const fmt = n => Math.round(n).toLocaleString('en-US');
+const DOWN = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const hlab = t => { const h=Math.floor(t)%24, m=Math.round((t-Math.floor(t))*60); return `${((h+11)%12+1)}:${String(m).padStart(2,'0')} ${h<12?'am':'pm'}`; };
+const interp = (arr,t) => { const h=Math.floor(t)%24,h1=(h+1)%24,f=t-Math.floor(t); return arr[h]*(1-f)+arr[h1]*f; };
+const avg5 = obj => Array.from({length:24},(_,h)=>[1,2,3,4,5].reduce((s,d)=>s+(obj[d]?obj[d][h]:0),0)/5);
+const L = { wk: avg5(D.l_hourly), sa: D.l_hourly[6], su: D.l_hourly[0] };
+const BA = { wk: avg5(D.bus_a), sa: D.bus_a[6]||Array(24).fill(0), su: D.bus_a[0]||Array(24).fill(0) };
+const CARS = D.car_hourly||Array(24).fill(0);
+const state = { t: 17, day: 'wk', live: false }; const listeners=[];
+function setHour(t, day){ state.t=t; if(day) state.day=day; $('hr').value=t; $('hr-lab').textContent=hlab(t); listeners.forEach(f=>f()); }
+$('hr').addEventListener('input',e=>{ state.live=false; $('live').classList.remove('on'); setHour(+e.target.value); });
+document.querySelectorAll('.days button[data-d]').forEach(b=>b.addEventListener('click',()=>{ document.querySelectorAll('.days button[data-d]').forEach(x=>x.classList.toggle('on',x===b)); state.live=false; $('live').classList.remove('on'); setHour(state.t,b.dataset.d); }));
+function nyNow(){ const p=new Intl.DateTimeFormat('en-US',{timeZone:'America/New_York',hour:'numeric',minute:'numeric',second:'numeric',weekday:'long',hour12:false}).formatToParts(new Date()); const g=k=>p.find(x=>x.type===k).value; return {h:+g('hour')%24,m:+g('minute'),s:+g('second'),wd:DOWN.indexOf(g('weekday'))}; }
+$('live').addEventListener('click',()=>{ state.live=!state.live; $('live').classList.toggle('on',state.live); if(state.live) goLive(); });
+function goLive(){ const n=nyNow(); const day=n.wd===0?'su':n.wd===6?'sa':'wk'; document.querySelectorAll('.days button[data-d]').forEach(x=>x.classList.toggle('on',x.dataset.d===day)); setHour(n.h+n.m/60, day); }
+setInterval(()=>{ const n=nyNow(); $('clock').textContent=`${DOWN[n.wd].slice(0,3)} ${hlab(n.h+n.m/60)} NYC`; if(state.live) goLive(); },1000);
+
+let shown=0;
+function hero(){
+  const l=interp(L[state.day],state.t)*2, a=interp(BA[state.day],state.t), c=interp(CARS,state.t);
+  const step=()=>{ shown+=(l-shown)*(reduce?1:.2); $('big').textContent=fmt(shown); if(Math.abs(l-shown)>1&&!reduce) requestAnimationFrame(step); else $('big').textContent=fmt(l); }; step();
+  $('d-a').textContent=fmt(a); $('d-c').textContent=fmt(c);
+  const dayName={wk:'weekday',sa:'Saturday',su:'Sunday'}[state.day];
+  $('hero-eye').textContent=(state.live?'Live · ':'')+`Typical ${dayName} at ${hlab(state.t)} · the pump`;
+  $('sub').innerHTML=`Entries at 34 St-Hudson Yards and 23 St added together and doubled to include exits, summer 2026 average. The nearest stairs are <b>543 m</b> away. Peak for a ${dayName} is <b>${fmt(Math.max(...L[state.day])*2)}</b> an hour.`;
+}
+listeners.push(hero);
+
+(function(){
+  const W=1040,H=320,pl=54,pr=16,pt=14,pb=30; const svg=$('river');
+  function draw(){
+    const l=L[state.day], a=BA[state.day];
+    const top=Math.ceil(Math.max(...l.map((v,h)=>v+a[h]))/500)*500||500;
+    const x=h=>pl+(W-pl-pr)*h/23, y=v=>H-pb-(H-pt-pb)*v/top;
+    const area=(lo,hi,cls)=>{ let d=''; for(let h=0;h<24;h++) d+=(h?'L':'M')+x(h).toFixed(1)+','+y(hi[h]).toFixed(1)+' '; for(let h=23;h>=0;h--) d+='L'+x(h).toFixed(1)+','+y(lo[h]).toFixed(1)+' '; return `<path class="${cls}" d="${d}Z"/>`; };
+    const zero=Array(24).fill(0), l1=l.slice(), l2=l.map((v,h)=>v+a[h]);
+    let s=''; for(let v=0;v<=top;v+=top/5){ s+=`<line class="grid" x1="${pl}" x2="${W-pr}" y1="${y(v)}" y2="${y(v)}"/><text class="ax" x="${pl-8}" y="${y(v)+4}" text-anchor="end">${v?fmt(v):'0'}</text>`; }
+    for(let h=0;h<24;h+=3){ s+=`<text class="ax" x="${x(h)}" y="${H-10}" text-anchor="middle">${h===0?'12am':h<12?h+'am':h===12?'noon':(h-12)+'pm'}</text>`; }
+    s+=area(zero,l1,'l')+area(l1,l2,'a')+`<line class="cur" x1="${x(state.t)}" x2="${x(state.t)}" y1="${pt}" y2="${H-pb}"/>`;
+    svg.innerHTML=s; $('r-l').textContent=fmt(interp(l,state.t)); $('r-a').textContent=fmt(interp(a,state.t)); $('r-c').textContent=fmt(interp(CARS,state.t)); $('r-hr').textContent=hlab(state.t);
+    const mx=Math.max(...CARS,1); $('bars').innerHTML=CARS.map((v,h)=>`<i class="${h===Math.floor(state.t)?'now':''}" style="height:${(v/mx*100).toFixed(0)}%" title="${hlab(h)} · ${fmt(v)} vehicles"></i>`).join('');
+  }
+  const move=e=>{ const r=svg.getBoundingClientRect(); const px=(e.touches?e.touches[0].clientX:e.clientX)-r.left; const t=Math.max(0,Math.min(23.9,((px/r.width)*W-pl)/(W-pl-pr)*23)); state.live=false; $('live').classList.remove('on'); setHour(t); };
+  svg.addEventListener('mousemove',move); svg.addEventListener('touchmove',e=>{move(e);e.preventDefault();},{passive:false});
+  listeners.push(draw);
+})();
+
+(function(){
+  const el=$('heat'), tip=$('tip'), data=D.l_hourly; const order=[1,2,3,4,5,6,0]; const mx=Math.max(...order.flatMap(d=>data[d]||[0]));
+  let html=''; order.forEach(d=>{ html+=`<span class="d">${DOWN[d].slice(0,3)}</span><div class="row">`; (data[d]||Array(24).fill(0)).forEach((v,h)=>{ const a=Math.max(.05,Math.pow(v/mx,.8)); html+=`<div class="cell" data-d="${d}" data-h="${h}" style="opacity:${a.toFixed(3)}" data-t="${DOWN[d]} ${hlab(h)} · ${fmt(v)} entries/hr"></div>`; }); html+='</div>'; });
+  html+='<span></span><div class="hrs">'+Array.from({length:24},(_,h)=>`<span>${h===0?'12a':h<12?h+'a':h===12?'12p':(h-12)+'p'}</span>`).join('')+'</div>';
+  el.innerHTML=html;
+  el.addEventListener('mousemove',e=>{ const c=e.target.closest('.cell'); if(!c){tip.style.display='none';return;} tip.style.display='block'; tip.textContent=c.dataset.t; tip.style.left=(e.clientX+14)+'px'; tip.style.top=(e.clientY-30)+'px'; });
+  el.addEventListener('mouseleave',()=>tip.style.display='none');
+  el.addEventListener('click',e=>{ const c=e.target.closest('.cell'); if(!c) return; const d=+c.dataset.d; const day=d===0?'su':d===6?'sa':'wk'; document.querySelectorAll('.days button[data-d]').forEach(x=>x.classList.toggle('on',x.dataset.d===day)); state.live=false; setHour(+c.dataset.h,day); });
+  listeners.push(()=>{ const h=Math.floor(state.t); const ds=state.day==='su'?[0]:state.day==='sa'?[6]:[1,2,3,4,5]; el.querySelectorAll('.cell').forEach(c=>c.classList.toggle('now',ds.includes(+c.dataset.d)&&+c.dataset.h===h)); });
+})();
+
+(function(){
+  const LAB={}; const series=(D.series||[]).map(s=>{LAB[s.k]=s.label; return [s.k,s.pts];}).filter(s=>s[1].length); if(!series.length){ $('multi').parentElement.style.display='none'; return; }
+  const W=1040,H=340,pl=60,pr=150,pt=14,pb=30; const months=[...new Set(series.flatMap(s=>s[1].map(p=>p[0])))].sort(); const n=months.length;
+  const top=Math.ceil(Math.max(...series.flatMap(s=>s[1].map(p=>p[1])))/250000)*250000;
+  const x=i=>pl+(W-pl-pr)*i/(n-1), y=v=>H-pb-(H-pt-pb)*v/top; let s='';
+  for(let v=0;v<=top;v+=250000){ s+=`<line class="grid" x1="${pl}" x2="${W-pr}" y1="${y(v)}" y2="${y(v)}"/><text class="ax" x="${pl-8}" y="${y(v)+4}" text-anchor="end">${v?(v/1e6).toFixed(2)+'M':'0'}</text>`; }
+  months.forEach((m,i)=>{ if(m.endsWith('-01')) s+=`<text class="ax" x="${x(i)}" y="${H-10}" text-anchor="middle">${m.slice(0,4)}</text>`; });
+  series.forEach(([cls,pts])=>{ const d=pts.map((p,i)=>(i?'L':'M')+x(months.indexOf(p[0])).toFixed(1)+','+y(p[1]).toFixed(1)).join(' '); s+=`<path class="y ${cls}" d="${d}"/>`; const last=pts[pts.length-1]; s+=`<text class="ylab ${cls}" x="${x(months.indexOf(last[0]))+8}" y="${y(last[1])+5}">${LAB[cls]}</text>`; });
+  $('multi').innerHTML=s;
+})();
+
+(function(){
+  const rows=D.daily||[]; if(!rows.length){ $('wx').style.display='none'; return; }
+  const W=1040,H=300,pl=54,pr=16,pt=14,pb=30,n=rows.length; const top=Math.ceil(Math.max(...rows.map(r=>r[1]))/5000)*5000;
+  const x=i=>pl+(W-pl-pr)*i/(n-1), y=v=>H-pb-(H-pt-pb)*v/top; let s='';
+  for(let g=0;g<=top;g+=top/4){ s+=`<line class="grid" x1="${pl}" x2="${W-pr}" y1="${y(g)}" y2="${y(g)}"/><text class="ax" x="${pl-8}" y="${y(g)+4}" text-anchor="end">${g?fmt(g):'0'}</text>`; }
+  rows.forEach((r,i)=>{ if(r[0].slice(8)==='01'){ const m=+r[0].slice(5,7); s+=`<text class="ax" x="${x(i)}" y="${H-10}" text-anchor="middle">${'JFMAMJJASOND'[m-1]}${m===1?' '+r[0].slice(0,4):''}</text>`; } });
+  const cls=r=>[(r[3]>0.25?'rain':''),(r[4]>0?'snow':''),(r[2]<35?'cold':''),(r[2]>90?'hot':'')].filter(Boolean).join(' ');
+  rows.forEach((r,i)=>{ s+=`<circle class="dot ${cls(r)}" cx="${x(i).toFixed(1)}" cy="${y(r[1]).toFixed(1)}" r="2.6"><title>${r[0]} · ${fmt(r[1])} entries · high ${Math.round(r[2])} F · ${r[3].toFixed(2)} in</title></circle>`; });
+  $('wxsvg').innerHTML=s;
+  const wx=$('wx'), names={rain:'rain days (over a quarter inch)',snow:'snow days',cold:'days with a high under 35 F',hot:'days with a high over 90 F'}; const avg=a=>a.reduce((s,r)=>s+r[1],0)/a.length;
+  function setMode(m){ wx.className='panel wx'+(m&&m!=='none'?' mode-'+m:''); document.querySelectorAll('.modes button').forEach(b=>b.classList.toggle('on',b.dataset.mode===m)); if(!m||m==='none'){ $('f-v').textContent='–'; $('f-t').textContent='Choose a condition.'; return; } const inn=rows.filter(r=>cls(r).split(' ').includes(m)), out=rows.filter(r=>!cls(r).split(' ').includes(m)); if(!inn.length){ $('f-v').textContent='0'; $('f-t').textContent='No such days.'; return; } const d=(avg(inn)/avg(out)-1)*100; $('f-v').textContent=(d>0?'+':'')+d.toFixed(0)+'%'; $('f-t').innerHTML=`<b>${inn.length}</b> ${names[m]}, averaging <b>${fmt(avg(inn))}</b> entries against <b>${fmt(avg(out))}</b> on the other ${out.length} days.`; }
+  document.querySelectorAll('.modes button').forEach(b=>b.addEventListener('click',()=>setMode(b.dataset.mode))); setMode('rain');
+})();
+
+(function(){
+  $('cams').innerHTML=(D.cams||[]).map(c=>`<div class="c"><img src="${c.src}" alt="DOT camera ${c.name}"><div class="cap"><b>${c.name}</b> · ${c.dist} m<br>${c.t}</div></div>`).join('');
+  if(D.fare) $('fare').textContent=D.fare;
+})();
+setHour(17,'wk');
+</script>
+
+<script type="importmap">
+{"imports":{"three":"https://unpkg.com/three@0.161.0/build/three.module.js","three/addons/":"https://unpkg.com/three@0.161.0/examples/jsm/"}}
+</script>
+<script type="module">
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
+const MODEL='assets/west_27th_527.glb';
+const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const loadEl=document.getElementById('load'), fillEl=document.getElementById('fill');
+// glTF space: x east, y up, z south.
+const P=__POINTS__; const DOOR=P.door, N=P.facing;   // N = the way the glass faces, out over 27th Street (glTF x east, z south)
+ const G=k=>[P[k][0],0,-P[k][1]], BOW=G('hudson_yards_7'), SPR=G('st23_ce'), GRD=G('highline_28'); const MID=[(BOW[0]+SPR[0]+GRD[0])/3,0,(BOW[2]+SPR[2]+GRD[2])/3];
+const WP=[
+ {p:[330,470,330],t:[0,8,0],s:250,o:0},                                               // s0 wide
+ {p:[DOOR[0]+N[0]*70+40,110,DOOR[2]+N[1]*70+50],t:[DOOR[0]-8,10,DOOR[2]],s:50,o:-.42}, // s1 the lot (o = slide the picture sideways, clear of the text card)
+ {p:[DOOR[0]+N[0]*42-6,80,DOOR[2]+N[1]*42+22],t:[DOOR[0],7,DOOR[2]],s:24,o:.46},      // s2 the dark door, from over the street
+ {p:[DOOR[0]+N[0]*42+14,78,DOOR[2]+N[1]*42-26],t:[DOOR[0],9,DOOR[2]],s:30,o:-.46},    // s3 the tenants, the other way
+ {p:[MID[0]+120,520,MID[2]+140],t:[MID[0]*0.6,0,MID[2]*0.6],s:330,o:0},               // s4 the trains, from above
+ {p:[10,760,90],t:[0,0,0],s:280,o:0},                                                 // s5 plan of the block
+ {p:[DOOR[0]+N[0]*60+30,95,DOOR[2]+N[1]*60+40],t:[DOOR[0],8,DOOR[2]],s:58,o:.42},     // s6 the rent, back at the door
+ {p:[420,560,420],t:[0,8,0],s:320,o:0}];                                              // s7 wide, out
+let renderer,scene,cam,ready=false;
+function fail(m){console.warn('3D unavailable:',m);document.body.classList.add('fallback');loadEl.classList.add('done');}
+try{renderer=new THREE.WebGLRenderer({antialias:true});}catch(e){fail(e);}
+if(renderer){
+ renderer.setPixelRatio(Math.min(devicePixelRatio,2)); renderer.setSize(innerWidth,innerHeight);
+ renderer.shadowMap.enabled=true; renderer.shadowMap.type=THREE.PCFSoftShadowMap;
+ document.getElementById('stage').appendChild(renderer.domElement);
+ scene=new THREE.Scene(); scene.background=new THREE.Color(0x141210); scene.fog=new THREE.Fog(0x141210,900,2200);
+ cam=new THREE.OrthographicCamera(-1,1,1,-1,-3000,6000);
+ scene.add(new THREE.HemisphereLight(0xfff1e0,0x1a1816,0.9));
+ const key=new THREE.DirectionalLight(0xffe2c4,2.2); key.position.set(-260,420,200); key.castShadow=true; key.shadow.mapSize.set(2048,2048); key.shadow.bias=-0.0006; key.shadow.normalBias=1.2;
+ const c=key.shadow.camera; c.left=-500;c.right=500;c.top=500;c.bottom=-500;c.near=1;c.far=1400; scene.add(key);
+ const fl=new THREE.DirectionalLight(0xc9d6ff,0.4); fl.position.set(320,200,-280); scene.add(fl);
+ const draco=new DRACOLoader(); draco.setDecoderPath('https://unpkg.com/three@0.161.0/examples/jsm/libs/draco/gltf/');
+ const loader=new GLTFLoader(); loader.setDRACOLoader(draco);
+ loader.load(MODEL,(g)=>{
+  g.scene.traverse(o=>{ if(!o.isMesh)return; const m=o.material; if(m){m.roughness=1;m.metalness=0;m.flatShading=true;}
+   const n=o.name.toUpperCase();
+   if(n.startsWith('CHELSEA_MASSING')){o.castShadow=true;o.receiveShadow=true;if(m)m.color=new THREE.Color(0x302C28);}
+   else if(n.startsWith('SITE_527')||n.startsWith('B527_FACE')||n.startsWith('B527_TRAYS')){o.castShadow=true;if(m){m.color=new THREE.Color(0xB4AFA5);m.emissive=new THREE.Color(0xB4AFA5);m.emissiveIntensity=.3;}}
+   else if(n.startsWith('B527_FINS')){if(m){m.color=new THREE.Color(0x8E897F);m.emissive=new THREE.Color(0x8E897F);m.emissiveIntensity=.2;}}
+   else if(n.startsWith('B527_SHOPGLASS')){if(m){m.color=new THREE.Color(0xB933AD);m.emissive=new THREE.Color(0xC56BD3);m.emissiveIntensity=.8;m.transparent=false;m.opacity=1;}}
+   else if(n.startsWith('B527_CORTEN')){if(m){m.color=new THREE.Color(0x6B3F26);m.emissive=new THREE.Color(0x6B3F26);m.emissiveIntensity=.3;}}
+   else if(n.startsWith('B527_SIGN')){if(m){m.color=new THREE.Color(0xB08D4A);m.emissive=new THREE.Color(0xB08D4A);m.emissiveIntensity=.5;}}
+   else if(n.startsWith('B527_GARDEN')||n.startsWith('HIGH_LINE_DECK')){if(m){m.color=new THREE.Color(0x3B4F38);m.emissive=new THREE.Color(0x3B4F38);m.emissiveIntensity=.35;}}
+   else if(n.startsWith('HIGH_LINE')){o.castShadow=true;if(m)m.color=new THREE.Color(0x121212);}
+   else if(n.startsWith('B527_')){if(m){m.color=new THREE.Color(0x0D1714);m.transparent=false;m.opacity=1;}}
+   
+   
+   
+   
+   
+   
+   
+   else if(n.startsWith('TREES')){o.castShadow=true;if(m)m.color=new THREE.Color(0x4A5A3A);}
+   else if(n.startsWith('GROUND')||n.startsWith('PLANE')){o.receiveShadow=true;if(m)m.color=new THREE.Color(0x141210);}
+   else if(n.startsWith('ROADBED')){o.receiveShadow=true;if(m)m.color=new THREE.Color(0x1C1A18);}
+   else if(n.startsWith('SIDEWALK')){o.receiveShadow=true;if(m)m.color=new THREE.Color(0x2B2823);}
+   else if(n.startsWith('ST_')){if(m)m.color=new THREE.Color(0x8A857C);}
+   else {o.receiveShadow=true;} });
+  scene.add(g.scene); ready=true; window.__ready=true; loadEl.classList.add('done'); onScroll();
+ },(ev)=>{ if(ev.total) fillEl.style.width=(ev.loaded/ev.total*100).toFixed(0)+'%'; },(err)=>fail(err));
+ const state={p:new THREE.Vector3(),t:new THREE.Vector3(),s:250,o:0}, goal={p:new THREE.Vector3(),t:new THREE.Vector3(),s:250,o:0};
+ const secs=[...document.querySelectorAll('main#dossier section')], links=[...document.querySelectorAll('#rail a')];
+ const cap=document.getElementById('cap'), bar=document.getElementById('bar'), scrim=document.getElementById('scrim'), num=document.getElementById('num'), meter=document.getElementById('meter'), mv=document.getElementById('m-v');
+ let shown=-1; const mult=()=>innerWidth<760?1.5:1; const lerp=(a,b,t)=>a+(b-a)*t; const smooth=t=>t*t*(3-2*t);
+ const MONTHS=__DARKMAX__;
+ function onScroll(){
+  const dm=document.getElementById('dossier'); const max=dm.offsetTop+dm.offsetHeight-innerHeight; const t=max>0?Math.min(1,Math.max(0,scrollY/max)):0;
+  const nb=document.getElementById('numbers').getBoundingClientRect().top; document.body.classList.toggle('numbers-on', nb<innerHeight*0.5); window.__numbersOn = nb<innerHeight*0.5;
+  bar.style.width=(t*100).toFixed(2)+'%';
+  const yc=scrollY+innerHeight*0.5, cs=secs.map(x=>x.offsetTop+dm.offsetTop+x.offsetHeight/2); let k=0; while(k<cs.length-2&&yc>=cs[k+1])k++;
+  const seg=Math.min(WP.length-1,Math.max(0,k+(yc-cs[k])/(cs[k+1]-cs[k]))), i=Math.min(WP.length-2,Math.floor(seg)), f=smooth(seg-i), a=WP[i], b=WP[i+1];   // camera follows the sections, not raw scroll distance
+  goal.p.set(lerp(a.p[0],b.p[0],f),lerp(a.p[1],b.p[1],f),lerp(a.p[2],b.p[2],f));
+  goal.t.set(lerp(a.t[0],b.t[0],f),lerp(a.t[1],b.t[1],f),lerp(a.t[2],b.t[2],f));
+  goal.s=lerp(a.s,b.s,f)*mult(); goal.o=innerWidth<760?0:lerp(a.o,b.o,f);
+  const close=1-Math.min(1,Math.max(0,(goal.s/mult()-28)/(320-28)));
+  document.documentElement.style.setProperty('--opsz',(72-60*close).toFixed(1));
+  document.documentElement.style.setProperty('--w',(700+100*close).toFixed(0));
+  if(reduced){state.p.copy(goal.p);state.t.copy(goal.t);state.s=goal.s;state.o=goal.o;}
+  const mid=innerHeight*0.45; let n=0,bd=1e9;
+  secs.forEach((s,j)=>{const r=s.getBoundingClientRect(); const d=Math.abs(r.top+r.height/2-mid); if(d<bd){bd=d;n=j;}});
+  // the meter counts the months dark as the camera closes on the door (waypoints 1 to 2)
+  const w=Math.min(1,Math.max(0,(seg-1)/1)); mv.textContent=Math.round(MONTHS*w); meter.classList.toggle('on',seg>0.85&&seg<2.6);
+  if(n!==shown){shown=n; links.forEach((l,j)=>l.classList.toggle('on',j===n)); const s=secs[n]; cap.textContent=s.dataset.cap||'';
+   scrim.className=(n===4||n===5)?'top':(s.querySelector('.wrap.right')?'flip':'');
+   const nv=s.dataset.num||''; num.textContent=nv||num.textContent; num.classList.toggle('on',!!nv);
+   num.style.color='var(--'+(s.dataset.numc||'f')+')'; }
+ }
+ function frame(){ requestAnimationFrame(frame); if(!ready||window.__numbersOn)return;
+  if(!reduced){state.p.lerp(goal.p,0.07);state.t.lerp(goal.t,0.07);state.s+=(goal.s-state.s)*0.07;state.o+=(goal.o-state.o)*0.07;}
+  const a=innerWidth/innerHeight; const off=state.o*state.s*a; cam.left=-state.s*a-off; cam.right=state.s*a-off; cam.top=state.s; cam.bottom=-state.s;
+  cam.position.copy(state.p); cam.up.set(0,1,0); cam.lookAt(state.t); cam.updateProjectionMatrix(); renderer.render(scene,cam); }
+ addEventListener('scroll',onScroll,{passive:true}); addEventListener('resize',()=>{renderer.setSize(innerWidth,innerHeight);onScroll();});
+ onScroll(); state.p.copy(goal.p); state.t.copy(goal.t); state.s=goal.s; state.o=goal.o; frame();
+ setTimeout(()=>{if(!ready)fail('timeout');},20000);
+}
+</script></body></html>
